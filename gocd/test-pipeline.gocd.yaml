@@ -25,7 +25,7 @@ pipelines:
               tasks:
                 - exec:
                     arguments:
-                      - README.md
+                      - ./gocd/README.md
                     command: cat
                     run_if: passed
             job-test-1-import:
@@ -33,6 +33,6 @@ pipelines:
               tasks:
                 - exec:
                     arguments:
-                      - ./test/test.sh
+                      - ./gocd/test/test.sh
                     command: bash
                     run_if: passed
