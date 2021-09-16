@@ -1,6 +1,6 @@
 format_version: 10
 pipelines:
-  test-pipeline:
+  test-pipeline-import:
     group: defaultGroup
     label_template: ${COUNT}
     lock_behavior: none
@@ -12,7 +12,7 @@ pipelines:
         auto_update: true
         branch: main
     stages:
-      - test-job:
+      - test-job-import:
           fetch_materials: true
           keep_artifacts: false
           clean_workspace: false
@@ -20,7 +20,7 @@ pipelines:
             type: success
             allow_only_on_success: false
           jobs:
-            job-test:
+            job-test-import:
               timeout: 0
               tasks:
                 - exec:
@@ -28,7 +28,7 @@ pipelines:
                       - README.md
                     command: cat
                     run_if: passed
-            job-test-1:
+            job-test-1-import:
               timeout: 0
               tasks:
                 - exec:
