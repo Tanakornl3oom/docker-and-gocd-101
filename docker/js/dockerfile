@@ -1,0 +1,10 @@
+FROM node:12.18.1
+
+
+WORKDIR /app
+COPY . .
+
+RUN yarn 
+RUN ls
+
+CMD ["yarn","start"]
